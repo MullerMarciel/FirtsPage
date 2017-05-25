@@ -1,0 +1,111 @@
+
+html, body { /*Retira a margem e preenchimento da pagina */
+    margin: 0; 
+    padding: 0;
+}
+
+.topnav { 
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /*Margens laterais serâo auto ajustaveis*/
+    padding: 5px 0; /*Pixel necessário para não alterar o preenchimento*/
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    /*box-shadow: 1px 1px 5px rgba(175, 175, 175, 0.2)*/
+}
+
+li {
+    color: black;
+    display: inline;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.85em; /*permite usuarios redimensionar o texto em seus navegadores*/
+    margin-right: 25px; /*Distancia entre palavras*/
+    text-transform: uppercase;
+}
+
+.material-icons.md-18 { 
+    font-size: 18px; 
+    position: fixed;
+}
+
+.imgfundo { 
+    background: url(http://wallpapercave.com/wp/AM9Simq.jpg) no-repeat center; 
+    background-size: cover; /*Cobre o fundo do elemento, passando de suas dimensões, a imagem vai se escondendo*/
+    height: 400px; /*Altura*/ 
+}
+
+.catalogo { 
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.veiculo {
+    display: inline-block; /*Display especifica o tipo de caixa, grade de caixa, que preenche a largura do navegador*/
+    margin: 0px 2% 80px 2%;
+    text-align: left;
+    width: 75%; /*define o espaçamento entre as imagens*/
+    font-size: 0.95em;
+    font-family: 'Khula', sans-serif;
+}
+
+.comprar {
+    color: rgb(3, 85, 157);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.60em;
+    padding-right: 35px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border: 1px solid rgba(3, 85, 157, 0.1);
+    width: 75%;
+}
+
+.veiculo img {
+    width: 95%;
+}
+
+.information {
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    width: 44%;
+    }
+
+.rodape{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    position: relative;
+    width: 75%;
+    height: 50%;
+    background-color: rgba(175, 175, 175, 0.1);
+    margin: 0 auto;
+}
+
+/*
+@media screen and (max-width: 780px){
+    .topnav {
+    background-color: red;
+    position: left;
+    width: 100%;
+    text-align: left;
+    }
+
+    .container {
+    max-width:100%;
+    margin: 0 auto;
+    padding: 1% 1%;
+    }
+}
+*/
