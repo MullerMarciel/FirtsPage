@@ -1,19 +1,85 @@
-
 html, body { /*Retira a margem e preenchimento da pagina */
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
-.topnav { 
+/* Menu dropdown */
+.material-icons {
+    background-color: white;
+    color: black;
+    padding: 2px 0;
+    border: none;
+}
+
+.dropdown {
+    position: relative; /*posiciona o elemento, podendo sobrepor*/
+    display: inline-block; /*impede a quebra de fluxo do paragrafo */
+}
+
+.dropdown-content {
+    display: none; /*Esconde o elemento sem ocupar espaço*/
+    position: absolute; /*Posiciona elemento  em relacao ao pai*/
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links interno */
+.dropdown-content a {
+    color: black;
+    padding: 12px 14px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600; /*largura da fonte*/
+    font-size: 0.85em
+}
+
+/* Ressaltar cor ao passar o ponteiro */
+.dropdown-content a:hover {background-color: #f1f1f1; color: #03559D;}
+
+/* Mostrar menu ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.topnav {
     background-color: white;
     position: fixed;
     width: 100%;
     text-align: center;
-    margin: 0 auto; /*Margens laterais serâo auto ajustaveis*/
+    margin: 0 auto; /*Margens laterais serão auto ajustaveis*/
     padding: 5px 0; /*Pixel necessário para não alterar o preenchimento*/
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
-    /*box-shadow: 1px 1px 5px rgba(175, 175, 175, 0.2)*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+}
+
+.topnav a:hover {color: rgb(3, 85, 157);}
+
+.menu {
+    display: none;
+}
+
+.search {
+    display: none;
+}
+
+@media screen and (max-width: 480px){
+    .topnav {
+        Display:none;
+    }
+
+    .menu {
+        display: block;
+        background-color: white;
+        position: fixed;
+        width: 100%;
+        padding: 16px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+    }
 }
 
 li {
@@ -22,7 +88,7 @@ li {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     font-size: 0.85em; /*permite usuarios redimensionar o texto em seus navegadores*/
-    margin-right: 25px; /*Distancia entre palavras*/
+    margin-right: 20px; /*Distancia entre palavras*/
     text-transform: uppercase;
 }
 
@@ -40,26 +106,68 @@ li {
 .catalogo { 
     width: 100%;
     margin: 20px auto;
-    padding: 20px 0px;
+    padding: 20px 0;
     text-align: center;
 }
 
 .veiculo {
     display: inline-block; /*Display especifica o tipo de caixa, grade de caixa, que preenche a largura do navegador*/
-    margin: 0px 2% 80px 2%;
+    margin: 0 2% 80px 2%;
     text-align: left;
-    width: 75%; /*define o espaçamento entre as imagens*/
+    width: 80%; /*define o espaçamento entre as imagens*/
     font-size: 0.95em;
     font-family: 'Khula', sans-serif;
 }
 
-.comprar {
-    color: rgb(3, 85, 157);
+.veiculo img {
+    width: 95%;
+}
+
+@media screen and (max-width: 480px) {
+    .veiculo img {
+        width: 120%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .veiculo {
+    display: inline-block; /*Display especifica o tipo de caixa, grade de caixa, que preenche a largura do navegador*/
+    margin: 0 2% 80px 2%;
+    text-align: left;
+    width: 90%; /*define o espaçamento entre as imagens*/
+    font-size: 1.10em;
+    font-family: 'Khula', sans-serif;
+    }
+
+    .veiculo img {
+        width: 100%;
+    }
+}
+
+/*Botão de compra*/
+.button {
     font-family: 'Raleway', sans-serif;
+    background-color: white;
+    border: none;
+    padding: 0;
+    color: #03559D;
     font-size: 1.60em;
-    padding-right: 35px;
-    border-radius: 10px;
-    text-decoration: none;
+    width: 200px;
+    text-align: left;
+}
+
+.button span:after { /*span = div*/
+    content: ' >';
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.button:hover span:after { /*Efeito ao passar o ponteiro*/
+    opacity: 2;
+}
+link{
+    color: blue;
 }
 
 a {
@@ -70,10 +178,6 @@ a {
 hr {
     border: 1px solid rgba(3, 85, 157, 0.1);
     width: 75%;
-}
-
-.veiculo img {
-    width: 95%;
 }
 
 .information {
@@ -93,19 +197,3 @@ hr {
     margin: 0 auto;
 }
 
-/*
-@media screen and (max-width: 780px){
-    .topnav {
-    background-color: red;
-    position: left;
-    width: 100%;
-    text-align: left;
-    }
-
-    .container {
-    max-width:100%;
-    margin: 0 auto;
-    padding: 1% 1%;
-    }
-}
-*/
